@@ -1,0 +1,15 @@
+*.o
+*.ko
+*.obj
+*.gch
+*.pch
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+*.pyc
+*.vcproj

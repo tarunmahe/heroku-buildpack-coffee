@@ -11,8 +11,7 @@ install_server() {
     #curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
 
     ls -lrt
-    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-     echo $?
+
     #tar xzf /tmp/server.tar.gz -C /tmp
     git clone git@github.com:technohowl/poker-eval.git
     echo $?
