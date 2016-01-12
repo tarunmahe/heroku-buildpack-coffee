@@ -21,7 +21,7 @@ export PATH="$BUILD_DIR/.heroku/node/bin":$PATH
 
 
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="https://github.com/technohowl/pcserver/blob/master/contents/pcserver.tar.gz"
+DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/pcserver.tar.gz"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
