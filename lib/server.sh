@@ -7,8 +7,10 @@ install_server() {
     header "Downloading package"
 
   local download_url="https://github.com/technohowl/poker-eval/archive/master.tar.gz"
-  curl "$download_url" --silent --fail -o /tmp/server.tar.gz || (echo "Unable to download server  does it exist?" && false)
-  tar xzf /tmp/server.tar.gz -C /tmp
+  #curl "$download_url" --silent --fail -o /tmp/server.tar.gz || (echo "Unable to download server  does it exist?" && false)
+  #tar xzf /tmp/server.tar.gz -C /tmp
+    cd /tmp
+    git clone https://github.com/technohowl/heroku-buildpack-coffee.git
 
   cd /tmp/poker-eval-master
   pwd
