@@ -166,10 +166,13 @@ compile_coffeescript | indent
 
 
 copy_views() {
+    ls -lrt  $BUILD_DIR/
+    ls -lrt   /app/target/
+
   cp -rf  $BUILD_DIR/src/views /app/target/
 }
 header "Copying view folder"
-###copy_views | indent
+copy_views | indent
 
 cache_build() {
   local cache_directories=$(get_cache_directories)
