@@ -19,11 +19,19 @@ mkdir -p "$BUILD_DIR/.heroku/node/"
 cd $BUILD_DIR
 export PATH="$BUILD_DIR/.heroku/node/bin":$PATH
 
-export PATH="$BUILD_DIR/.heroku/python/bin:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
-export C_INCLUDE_PATH="/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include"
-export CPLUS_INCLUDE_PATH="/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include:/app/.heroku/python/include"
-export LIBRARY_PATH="/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
-export LD_LIBRARY_PATH="/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
+
+VENDOR_DIR="vendor"
+DOWNLOAD_URL="https://github.com/technohowl/pcserver/blob/master/contents/pcserver.tar.gz"
+
+echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
+
+cd $BUILD_DIR
+mkdir -p $VENDOR_DIR
+cd $VENDOR_DIR
+curl --silent -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
+
+export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
+export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
 
 ### Load dependencies
 
