@@ -85,8 +85,8 @@ header "Setting path variabled for node"
 ls -lrt  $BUILD_DIR/vendor/bin/include/
 ls -lrt  $BUILD_DIR/vendor/bin/lib/
 
-export CPATH="$BUILD_DIR/vendor/bin/include/"
-export C_INCLUDE_PATH="$BUILD_DIR/vendor/bin/include/"
+export CPATH="$BUILD_DIR/vendor/bin/include/poker-eval:$BUILD_DIR/vendor/bin/include"
+export C_INCLUDE_PATH="$BUILD_DIR/vendor/bin/include/:$BUILD_DIR/vendor/bin/include/poker-eval"
 export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/lib/pkgconfig/"
 
 echo $PKG_CONFIG_PATH
