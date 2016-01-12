@@ -41,7 +41,8 @@ handle_failure() {
   header "Build failed"
   failure_message | indent
 }
-trap 'handle_failure' ERR
+
+#trap 'handle_failure' ERR
 
 ### Check initial state
 
