@@ -32,20 +32,7 @@ source $BP_DIR/lib/dependencies.sh
 source $BP_DIR/lib/server.sh
 
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/pcserver.tar.gz"
 
-header "Downloading package"
-
-#cd $BUILD_DIR
-#mkdir -p $VENDOR_DIR
-#cd $VENDOR_DIR
-#curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
-
-pwd
-ls -lrt $BP_DIR
-
-
-echo "Path " $PATH | indent
 
 
 ### Handle errors
@@ -82,8 +69,6 @@ install_server | indent
 
 header "Setting path variabled for node"
 
-ls -lrt  $BUILD_DIR/vendor/bin/include/poker-eval
-ls -lrt  $BUILD_DIR/vendor/bin/lib/
 
 export CPATH="$BUILD_DIR/vendor/bin/include/poker-eval:$BUILD_DIR/vendor/bin/include"
 export C_INCLUDE_PATH="$BUILD_DIR/vendor/bin/include/:$BUILD_DIR/vendor/bin/include/poker-eval"
