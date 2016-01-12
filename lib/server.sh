@@ -6,7 +6,7 @@ install_server() {
 
     header "Downloading package"
 
-  cd $BUILD_DIR/vendor/poker-eval
+  cd $BP_DIR/vendor/poker-eval
   pwd
 
   chmod +x configure
