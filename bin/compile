@@ -20,6 +20,16 @@ cd $BUILD_DIR
 export PATH="$BUILD_DIR/.heroku/node/bin":$PATH
 
 
+### Load dependencies
+
+source $BP_DIR/lib/output.sh
+source $BP_DIR/lib/json.sh
+source $BP_DIR/lib/failure.sh
+source $BP_DIR/lib/environment.sh
+source $BP_DIR/lib/binaries.sh
+source $BP_DIR/lib/cache.sh
+source $BP_DIR/lib/dependencies.sh
+
 VENDOR_DIR="vendor"
 DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/pcserver.tar.gz"
   
@@ -33,15 +43,6 @@ curl --silent -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
 export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
 export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
 
-### Load dependencies
-
-source $BP_DIR/lib/output.sh
-source $BP_DIR/lib/json.sh
-source $BP_DIR/lib/failure.sh
-source $BP_DIR/lib/environment.sh
-source $BP_DIR/lib/binaries.sh
-source $BP_DIR/lib/cache.sh
-source $BP_DIR/lib/dependencies.sh
 
 ### Handle errors
 
