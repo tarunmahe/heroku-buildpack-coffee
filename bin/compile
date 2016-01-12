@@ -182,6 +182,13 @@ cache_build() {
 header "Caching build"
 cache_build | indent
 
+copy_views() {
+  cp -rf  $BUILD_DIR/src/views $BUILD_DIR/target/
+}
+header "Copying view folder"
+copy_views | indent
+
+
 summarize_build() {
   cd $BUILD_DIR
   (npm ls --depth=0 | tail -n +2 || true) 2>/dev/null
