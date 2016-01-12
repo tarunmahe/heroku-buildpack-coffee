@@ -5,12 +5,14 @@ install_server() {
   echo "Downloading and installing node ..."
 
     header "Downloading package"
-
-  local download_url="https://github.com/technohowl/poker-eval/archive/master.tar.gz"
-  #curl "$download_url" --silent --fail -o /tmp/server.tar.gz || (echo "Unable to download server  does it exist?" && false)
-  #tar xzf /tmp/server.tar.gz -C /tmp
     cd /tmp
-    git clone https://github.com/technohowl/heroku-buildpack-coffee.git
+
+  local download_url="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/server.tar.gz"
+    curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
+
+    ls -lrt
+    #tar xzf /tmp/server.tar.gz -C /tmp
+    #    git clone https://github.com/technohowl/heroku-buildpack-coffee.git
 
   cd /tmp/poker-eval-master
   pwd
