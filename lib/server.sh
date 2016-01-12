@@ -2,7 +2,7 @@
 install_server() {
 
 
-  echo "Downloading and installing node $version..."
+  echo "Downloading and installing node ..."
 
     header "Downloading package"
 
