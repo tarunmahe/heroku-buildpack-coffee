@@ -1,9 +1,11 @@
 install_node_modules() {
   local build_dir=${1:-}
   export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
+  export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
+ 
   pwd
   ls -lrt
-  echo "build dir:" $build_dir
+  echo "build dir:" $LD_LIBRARY_PATH
   if [ -e $build_dir/package.json ]; then
     cd $build_dir
     echo "Pruning any extraneous modules"
