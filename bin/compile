@@ -82,7 +82,7 @@ install_server | indent
 
 header "Setting path variabled for node"
 
-ls -lrt  $BUILD_DIR/vendor/bin/include/
+ls -lrt  $BUILD_DIR/vendor/bin/include/poker-eval
 ls -lrt  $BUILD_DIR/vendor/bin/lib/
 
 export CPATH="$BUILD_DIR/vendor/bin/include/poker-eval:$BUILD_DIR/vendor/bin/include"
