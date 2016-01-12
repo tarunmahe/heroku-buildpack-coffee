@@ -86,7 +86,7 @@ ls -lrt  $BUILD_DIR/vendor/bin/include/
 ls -lrt  $BUILD_DIR/vendor/bin/lib/
 
 export CPATH="$BUILD_DIR/vendor/bin/include/"
-export C_LIBRARY_PATH="$BUILD_DIR/vendor/bin/include/"
+export C_INCLUDE_PATH="$BUILD_DIR/vendor/bin/include/"
 export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/lib/pkgconfig/"
 
 echo $PKG_CONFIG_PATH
