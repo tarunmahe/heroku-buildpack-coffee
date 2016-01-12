@@ -36,13 +36,13 @@ DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/conte
 
 header "Downloading package"
 
-cd $BUILD_DIR
-mkdir -p $VENDOR_DIR
-cd $VENDOR_DIR
-curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
+#cd $BUILD_DIR
+#mkdir -p $VENDOR_DIR
+#cd $VENDOR_DIR
+#curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
 
 pwd
-ls -lrt
+ls -lrt $BUILD_DIR/$VENDOR_DIR
 
 
 echo "Path " $PATH | indent
