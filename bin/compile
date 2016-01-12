@@ -38,10 +38,16 @@ header "Downloading package"
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl --silent -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
+curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
 
 export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
 export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
+
+pwd
+ls -lrt
+
+
+echo "Path " $PATH | indent
 
 
 ### Handle errors
