@@ -42,7 +42,7 @@ header "Downloading package"
 #curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
 
 pwd
-ls -lrt $BUILD_DIR/$VENDOR_DIR
+ls -lrt $BUILD_DIR/
 
 
 echo "Path " $PATH | indent
