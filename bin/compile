@@ -164,6 +164,13 @@ compile_coffeescript() {
 header "Compiling coffeescript source"
 compile_coffeescript | indent
 
+
+copy_views() {
+  cp -rf  $BUILD_DIR/src/views $BUILD_DIR/target/
+}
+header "Copying view folder"
+copy_views | indent
+
 cache_build() {
   local cache_directories=$(get_cache_directories)
   
@@ -182,11 +189,6 @@ cache_build() {
 header "Caching build"
 cache_build | indent
 
-copy_views() {
-  cp -rf  $BUILD_DIR/src/views $BUILD_DIR/target/
-}
-header "Copying view folder"
-copy_views | indent
 
 
 summarize_build() {
