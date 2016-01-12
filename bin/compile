@@ -33,7 +33,7 @@ source $BP_DIR/lib/server.sh
 
 VENDOR_DIR="vendor"
 DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/pcserver.tar.gz"
-  
+
 header "Downloading package"
 
 cd $BUILD_DIR
@@ -79,8 +79,8 @@ create_env() {
 header "Creating runtime server environment"
 create_env # can't indent the whole thing because piping causes subshells; no exporting possible
 install_server | indent
-export CPATH="$BUILD_DIR/vendor/poker-eval/bin/include/"
-export PKG_CONFIG_PATH="$BUILD_DIR/vendor/poker-eval/bin/lib/pkgconfig/"
+export CPATH="$BUILD_DIR/vendor/bin/poker-eval/bin/include/"
+export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/poker-eval/bin/lib/pkgconfig/"
 
 echo $PKG_CONFIG_PATH
 
