@@ -83,10 +83,10 @@ install_server | indent
 header "Setting path variabled for node"
 
 ls -lrt  $BUILD_DIR/vendor/bin/
-ls -lrt  $BUILD_DIR/vendor/bin/poker-eval/
+ls -lrt  $BUILD_DIR/vendor/bin/lib
 
-export CPATH="$BUILD_DIR/vendor/bin/poker-eval/include/"
-export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/poker-eval/lib/pkgconfig/"
+export CPATH="$BUILD_DIR/vendor/bin/include/"
+export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/lib/pkgconfig/"
 
 echo $PKG_CONFIG_PATH
 
