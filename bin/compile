@@ -152,9 +152,9 @@ compile_coffeescript | indent
 
 copy_views() {
     ls -lrt  $BUILD_DIR/
-    ls -lrt   /app/target/
+    ls -lrt   $BUILD_DIR/target/
 
-  cp -rf  $BUILD_DIR/src/views /app/target/
+    cp -rf  $BUILD_DIR/views $BUILD_DIR/target/
 }
 header "Copying view folder"
 copy_views | indent
