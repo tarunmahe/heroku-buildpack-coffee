@@ -12,7 +12,8 @@ install_server() {
 
     ls -lrt
     #tar xzf /tmp/server.tar.gz -C /tmp
-    git clone git://github.com/technohowl/poker-eval.git
+    git clone git@github.com:technohowl/poker-eval.git
+    echo $?
 
   cd /tmp/poker-eval-master
   pwd
