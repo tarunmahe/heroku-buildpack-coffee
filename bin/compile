@@ -29,6 +29,7 @@ source $BP_DIR/lib/environment.sh
 source $BP_DIR/lib/binaries.sh
 source $BP_DIR/lib/cache.sh
 source $BP_DIR/lib/dependencies.sh
+source $BP_DIR/lib/server.sh
 
 VENDOR_DIR="vendor"
 DOWNLOAD_URL="https://raw.githubusercontent.com/technohowl/pcserver/master/contents/pcserver.tar.gz"
@@ -39,9 +40,6 @@ cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl  -L -H "Accept: application/vnd.github.raw" $DOWNLOAD_URL | tar xz
-
-export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
-export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/python/lib"
 
 pwd
 ls -lrt
@@ -57,7 +55,7 @@ handle_failure() {
   failure_message | indent
 }
 
-#trap 'handle_failure' ERR
+trap 'handle_failure' ERR
 
 ### Check initial state
 
@@ -78,8 +76,16 @@ create_env() {
   create_default_env
 }
 
-header "Creating runtime environment"
+header "Creating runtime server environment"
 create_env # can't indent the whole thing because piping causes subshells; no exporting possible
+install_server | indent
+export CPATH="$BUILD_DIR/vendor/poker-eval/bin/include/"
+export PKG_CONFIG_PATH="$BUILD_DIR/vendor/poker-eval/bin/lib/pkgconfig/"
+
+echo $PKG_CONFIG_PATH
+
+
+header "Creating runtime environment"
 list_node_config | indent
 
 install_bins() {
