@@ -32,7 +32,7 @@ export PATH="$HOME/.heroku/node/bin:$HOME/bin:$HOME/node_modules/.bin:$HOME/.her
 export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
 
-export LD_LIBRARY_PATH="$HOME/.heroku/vendor/lib":$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="$HOME/.heroku/vendor/lib:$HOME/vendor/bin/lib":$LD_LIBRARY_PATH
 
 pwd
 ls
