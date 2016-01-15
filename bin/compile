@@ -73,6 +73,7 @@ header "Setting path variabled for node"
 export CPATH="$BUILD_DIR/vendor/bin/include/poker-eval:$BUILD_DIR/vendor/bin/include"
 export C_INCLUDE_PATH="$BUILD_DIR/vendor/bin/include/:$BUILD_DIR/vendor/bin/include/poker-eval"
 export PKG_CONFIG_PATH="$BUILD_DIR/vendor/bin/lib/pkgconfig/"
+export LD_LIBRARY_PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib":$LD_LIBRARY_PATH
 
 echo $PKG_CONFIG_PATH
 
