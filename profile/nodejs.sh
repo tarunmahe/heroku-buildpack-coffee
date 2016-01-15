@@ -28,11 +28,11 @@ detect_memory() {
   esac
 }
 
-export PATH="$HOME/.heroku/node/bin:$HOME/bin:$HOME/node_modules/.bin:$PATH"
+export PATH="$HOME/.heroku/node/bin:$HOME/bin:$HOME/node_modules/.bin:$HOME/.heroku/vendor/:$HOME/.heroku/vendor/lib:$HOME/.heroku/vendor/include:$PATH"
 export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
 
-export PATH="$BUILD_DIR/vendor:$BUILD_DIR/vendor/include:$BUILD_DIR/vendor/lib:$BUILD_DIR/.heroku/vendor/:/app/.heroku/vendor/lib:$BUILD_DIR/.heroku/vendor/lib:/app/.heroku/vendor/include:$BUILD_DIR/.heroku/vendor/include":$PATH
+export LD_LIBRARY_PATH="$HOME/.heroku/vendor/lib":$LD_LIBRARY_PATH
 
 pwd
 ls
