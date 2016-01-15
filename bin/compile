@@ -122,9 +122,9 @@ restore_cache() {
       echo "Loading $(echo $cache_directories | wc -w | xargs) from cacheDirectories (package.json):"
       restore_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
     fi
-    header "Building server "
-    npm remove poker-eval
-    npm install poker-eval
+#    header "Building server "
+#    npm remove poker-eval
+#    npm install poker-eval
   else
     echo "Skipping cache ($cache_status)"
   fi
