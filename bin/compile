@@ -158,7 +158,7 @@ copy_views() {
     cp -f  $BUILD_DIR/version.sh $BUILD_DIR/target/
     chmod +x $BUILD_DIR/target/version.sh
     cd $BUILD_DIR/target/
-   ./version.sh
+   #./version.sh
 }
 header "Copying view folder"
 copy_views | indent
