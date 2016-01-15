@@ -121,6 +121,8 @@ restore_cache() {
       echo "Loading $(echo $cache_directories | wc -w | xargs) from cacheDirectories (package.json):"
       restore_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
     fi
+    header "Building server "
+    npm rebuild poker-eval
   else
     echo "Skipping cache ($cache_status)"
   fi
@@ -175,8 +177,7 @@ cache_build() {
     echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
     save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
   fi
-  header "Building server "
-  npm rebuild poker-eval
+
   save_signature
 }
 
