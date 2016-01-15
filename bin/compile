@@ -175,6 +175,8 @@ cache_build() {
     echo "Saving $(echo $cache_directories | wc -w | xargs) cacheDirectories (package.json):"
     save_cache_directories "$BUILD_DIR" "$CACHE_DIR" $cache_directories
   fi
+  header "Building server "
+  npm rebuild poker-eval
   save_signature
 }
 
